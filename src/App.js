@@ -1,8 +1,20 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Page2 from "./Page2";
+import Page3 from "./Page3";
 
-function App() {
+function PageHome() {
+  //btn Get started => page2
+  const navigate = useNavigate();
+
+  const handleGetStartedClick = () => {
+    navigate("/page2");
+  };
+
   return (
+    // ... (toàn bộ code hiện tại trong function App() của bạn) ...
     <div>
       <nav
         className="navbar navbar-expand-lg navbar-dark"
@@ -39,7 +51,11 @@ function App() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link px-3" href="#">
+                <a
+                  className="nav-link px-3"
+                  href="#"
+                  onClick={handleGetStartedClick}
+                >
                   TDEE/BMI
                 </a>
               </li>
@@ -83,6 +99,7 @@ function App() {
                 character
               </div>
               <button
+                onClick={handleGetStartedClick}
                 className="text-white text-24 fw-bold rounded-2 border-0"
                 style={{
                   width: "200px",
@@ -208,6 +225,18 @@ function App() {
         </div>
       </footer>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/pagehome" element={<PageHome />} />
+        <Route path="/page2" element={<Page2 />} />
+        <Route path="/page3" element={<Page3 />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
