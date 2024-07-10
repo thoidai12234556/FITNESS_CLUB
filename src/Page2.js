@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import TdeeCalculator from "./TdeeCalculator";
 
 function Page2() {
   return (
@@ -142,7 +143,8 @@ function Page2() {
                 </p>
               </div>
             </div>
-            <div className="col-12 col-lg-6 mb-2">
+
+            {/* <div className="col-12 col-lg-6 mb-2">
               <h3 className="text-24 fw-bold text-white mb-4 text-left">
                 CÔNG CỤ TÍNH TDEE ONLINE
               </h3>
@@ -396,6 +398,10 @@ function Page2() {
                   </form>
                 </div>
               </div>
+            </div> */}
+
+            <div className="col-12 col-lg-6 mb-2">
+              <TdeeCalculator />
             </div>
           </div>
         </div>
