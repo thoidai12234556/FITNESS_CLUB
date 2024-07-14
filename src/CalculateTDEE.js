@@ -10,7 +10,7 @@ function Page2() {
         style={{ backgroundColor: "#a50000" }}
       >
         <div className="container">
-          <a href="./home.html" className="navbar-brand fw-bold d-flex">
+          <a href="./homepage.html" className="navbar-brand fw-bold d-flex">
             <img src="./image/logo.svg" alt="logo" />
             <img className="ms-4" src="./image/logo-name.svg" alt="logo-name" />
           </a>
