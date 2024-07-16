@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Page2 from "./CalculateTDEE";
-import Page3 from "./Page3";
+import Page3 from "./Blog";
 
 function PageHome() {
   //btn Get started => page2
@@ -234,7 +234,7 @@ function App() {
       <Routes>
         <Route path="/pagehome" element={<PageHome />} />
         <Route path="/calculate-tdee" element={<Page2 />} />
-        <Route path="/page3" element={<Page3 />} />
+        <Route path="/blog" element={<Page3 />} />
       </Routes>
     </BrowserRouter>
   );
