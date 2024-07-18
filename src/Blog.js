@@ -32,18 +32,21 @@ function Page3() {
                 <a
                   className="nav-link active px-4"
                   aria-current="page"
-                  href="#"
+                  href="http://localhost:3000/pagehome"
                 >
                   HOME
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link px-3" href="#">
+                <a
+                  className="nav-link px-3"
+                  href="http://localhost:3000/calculate-tdee"
+                >
                   TDEE/BMI
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link px-3" href="#">
+                <a className="nav-link px-3" href="http://localhost:3000/blog">
                   BLOGS
                 </a>
               </li>
@@ -53,26 +56,11 @@ function Page3() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link px-3" href="#">
-                  CONTACT
-                </a>
-              </li>
-              <li className="nav-item">
-                <a href="nav-link px-3">
-                  <img
-                    src="./image/noti.svg"
-                    alt="noti"
-                    style={{ width: "28px" }}
-                  />
-                </a>
-              </li>
-              <li className="nav-item ms-3">
-                <a href="nav-link px-3">
-                  <img
-                    src="./image/user.svg"
-                    alt="user"
-                    style={{ width: "28px" }}
-                  />
+                <a
+                  className="nav-link px-3"
+                  href="http://localhost:3000/contact"
+                >
+                  BLOGS
                 </a>
               </li>
             </ul>

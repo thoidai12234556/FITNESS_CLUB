@@ -1,9 +1,10 @@
 import logo from "./logo.svg";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Page2 from "./CalculateTDEE";
 import Page3 from "./Blog";
+import Contact from "./Contact";
 
 function PageHome() {
   //btn Get started => page2
@@ -45,7 +46,7 @@ function PageHome() {
                 <a
                   className="nav-link active px-4"
                   aria-current="page"
-                  href="#"
+                  href="http://localhost:3000/pagehome"
                 >
                   HOME
                 </a>
@@ -60,7 +61,7 @@ function PageHome() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link px-3" href="#">
+                <a className="nav-link px-3" href="http://localhost:3000/blog">
                   BLOGS
                 </a>
               </li>
@@ -70,9 +71,9 @@ function PageHome() {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link px-3" href="#">
+                <Link className="nav-link px-3" to="/contact">
                   CONTACT
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -235,6 +236,7 @@ function App() {
         <Route path="/pagehome" element={<PageHome />} />
         <Route path="/calculate-tdee" element={<Page2 />} />
         <Route path="/blog" element={<Page3 />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );

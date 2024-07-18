@@ -1,9 +1,26 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import TdeeCalculator from "./TdeeCalculator";
-import TdeeResult from "./TdeeResult";
 
-function Page2() {
+function Contact() {
+  const navigate = useNavigate();
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleGetStartedClick = () => {
+    navigate("/calculate-tdee");
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Xử lý gửi thông tin liên lạc (ví dụ: gửi đến API)
+    console.log("Tên:", name);
+    console.log("Số điện thoại:", phone);
+    console.log("Email:", email);
+    // Sau khi gửi, bạn có thể chuyển hướng người dùng hoặc hiển thị thông báo thành công
+    navigate("/pagehome"); // Chuyển hướng về trang chủ sau khi gửi thành công
+  };
+
   return (
     <div>
       <nav
@@ -11,9 +28,9 @@ function Page2() {
         style={{ backgroundColor: "#a50000" }}
       >
         <div className="container">
-          <a href="./homepage.html" className="navbar-brand fw-bold d-flex">
+          <a href="./home.html" className="navbar-brand fw-bold d-flex">
             <img src="./image/logo.svg" alt="logo" />
-            <img className="ms-4" src="./image/logo-name.svg" alt="logo-name" />
+            <img className="ms-4" src="./image/logo-name.svg" alt="logo name" />
           </a>
           <button
             className="navbar-toggler"
@@ -43,7 +60,8 @@ function Page2() {
               <li className="nav-item">
                 <a
                   className="nav-link px-3"
-                  href="http://localhost:3000/calculate-tdee"
+                  href="#"
+                  onClick={handleGetStartedClick}
                 >
                   TDEE/BMI
                 </a>
@@ -59,83 +77,72 @@ function Page2() {
                 </a>
               </li>
               <li className="nav-item">
-                <a
-                  className="nav-link px-3"
-                  href="http://localhost:3000/contact"
-                >
-                  BLOGS
-                </a>
+                <Link className="nav-link px-3" to="/contact">
+                  CONTACT
+                </Link>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      <section
-        style={{
-          backgroundColor: "#a50000",
-          paddingTop: "100px",
-          paddingBottom: "100px",
-        }}
-      >
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-lg-6 mb-2">
-              <div
-                className="rounded-4 p-3"
-                style={{
-                  borderColor: "white",
-                  border: "2px solid #fff",
-                  borderRadius: "8px",
-                }}
-              >
-                <h3 className="text-24 fw-bold text-white mb-4 text-center">
-                  TDEE là gì? Tính TDEE giảm cân lành mạnh
-                </h3>
-                <p className="text-16 text-white">
-                  TDEE (Total Daily Energy Expenditure) là tất cả năng lượng cần
-                  thiết cho hoạt động mỗi ngày của bạn. Tính TDEE giúp bạn đạt
-                  được mục tiêu dinh dưỡng (giảm cân, tăng cân) của bạn.
-                </p>
-                <p className="text-16 text-white">
-                  Xác định chỉ số TDEE sẽ giúp bạn biết rõ lượng calo nên tăng
-                  hoặc giảm để đạt hiệu quả cutting (giảm cân) hay bulking (tăng
-                  cân). Nói cách khác, TDEE giúp cân bằng năng lượng để đạt được
-                  hiệu quả giảm cân nhưng không gây ra những tác động tiêu cực
-                  đến sức khỏe.
-                </p>
-                <p className="text-16 text-white mb-5">
-                  Tính TDEE giảm cân giúp chúng ta phân biệt được một cách tương
-                  đối năng lượng của thực phẩm hay năng lượng cần thiết để duy
-                  trì hoạt động. Từ đó xây dựng cho mình một chế độ ăn phù hợp
-                  với bản thân.
-                </p>
-                <h3 className="text-24 fw-bold text-white mb-4 text-center">
-                  Tại sao bạn cần phải tính calo?
-                </h3>
-                <p className="text-16 text-white">
-                  Chúng ta thường không để ý xem mình đã ăn bao nhiêu trong một
-                  bữa dù việc này rất cần thiết, đặc biệt đối với những bạn muốn
-                  giảm cân.
-                </p>
-                <p className="text-16 text-white">
-                  Chúng ta vẫn luôn nghĩ rằng chỉ cần ăn ít hơn bình thường là
-                  đã có thể giảm được cân rồi. Điều này không sai, nhưng có thể
-                  dẫn đến việc thiếu những chất cần thiết dành cho cơ thể
-                </p>
-                <p className="text-16 text-white">
-                  Vì thế khi ăn, đặc biệt là khi giảm cân, bạn nên tính cho mình
-                  một lượng calo cần thiết nạp vào cơ thể trong một ngày.Việc
-                  này không chỉ giúp bạn kiểm soát được lượng ăn mà còn có thể
-                  chia khẩu phần ăn sao cho đủ chất. Bạn cũng có thể chia ra
-                  thành nhiều bữa ăn trong một ngày nhưng vẫn dựa trên tổng
-                  lượng calo đã tính.
-                </p>
-              </div>
-            </div>
 
-            <div className="col-12 col-lg-6 mb-2">
-              <TdeeCalculator />
-            </div>
+      <section
+        className="container-fluid py-5" // Thêm class py-5 để tạo padding top & bottom
+      >
+        <div className="row">
+          <div className="col-md-6">
+            <img
+              src="https://s3.ap-northeast-1.amazonaws.com/h.files/images/1721319999842_srh42U4mzm.jpg" // Thay bằng đường dẫn ảnh nền của bạn
+              alt="Contact Us"
+              className="img-fluid rounded"
+            />
+          </div>
+          <div className="col-md-6">
+            <h2 className="mb-4">Liên hệ</h2>
+            <form onSubmit={handleSubmit}>
+              <div className="form-group mb-3">
+                <label htmlFor="name" className="form-label">
+                  Họ tên
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="form-group mb-3">
+                <label htmlFor="phone" className="form-label">
+                  Số điện thoại
+                </label>
+                <input
+                  type="tel"
+                  className="form-control"
+                  id="phone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="form-group mb-3">
+                <label htmlFor="email" className="form-label">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  className="form-control"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <button type="submit" className="btn btn-primary">
+                Đăng ký
+              </button>
+            </form>
           </div>
         </div>
       </section>
@@ -149,7 +156,7 @@ function Page2() {
                 <img
                   className="ms-4"
                   src="./image/logo-name.svg"
-                  alt="logo-name"
+                  alt="logo name"
                 />
               </div>
             </div>
@@ -221,4 +228,4 @@ function Page2() {
   );
 }
 
-export default Page2;
+export default Contact;
